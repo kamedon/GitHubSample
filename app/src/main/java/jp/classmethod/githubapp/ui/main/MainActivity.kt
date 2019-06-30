@@ -15,7 +15,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding.viewModel = viewModel
-        viewModel.load()
+        binding.submitBtn.setOnClickListener {
+            viewModel.fetch()
+        }
     }
 }
 

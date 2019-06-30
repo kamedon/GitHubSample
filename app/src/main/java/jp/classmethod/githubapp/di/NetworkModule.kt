@@ -1,22 +1,25 @@
 package jp.classmethod.githubapp.di
 
-import com.squareup.moshi.Moshi
+import com.google.gson.FieldNamingPolicy
+import com.google.gson.GsonBuilder
 import jp.classmethod.githubapp.network.ApiGenerator
 import okhttp3.OkHttpClient
 import org.koin.dsl.module
 import retrofit2.Converter
 import retrofit2.Retrofit
-import retrofit2.converter.moshi.MoshiConverterFactory
+import retrofit2.converter.gson.GsonConverterFactory
 
 object NetworkModule {
     fun module() = module {
 
         single {
-            Moshi.Builder().build()
+            GsonBuilder()
+                    .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
+                    .create()
         }
 
         single<Converter.Factory> {
-            MoshiConverterFactory.create(get())
+            GsonConverterFactory.create(get())
         }
 
         single {

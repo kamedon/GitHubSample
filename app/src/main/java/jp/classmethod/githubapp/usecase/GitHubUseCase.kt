@@ -12,7 +12,7 @@ class GitHubUseCase(private val repository: IGitHubRepository) : IGitHubUseCase 
     override suspend fun user(name: String): UserPresentModel {
         val response = repository.user(name)
         return if (response != null) {
-            UserPresentModel(response.id)
+            UserPresentModel(response.id, response.reposUrl)
         } else {
             UserPresentModel.NONE
         }

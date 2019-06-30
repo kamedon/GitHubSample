@@ -1,7 +1,7 @@
 package jp.classmethod.githubapp.ui.main
 
-class UserPresentModel(val id: String) {
+class UserPresentModel(val id: String, val reposUrl: String) {
     companion object {
-        val NONE = UserPresentModel("")
+        val NONE = UserPresentModel("", "")
     }
 }
