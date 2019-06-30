@@ -75,9 +75,8 @@ dependencies {
     implementation 'com.github.wada811:DataBinding-ktx:2.+'
 }
 
+
 ktlint {
-    version = "0.14.0"
     android = true
-    reporter = "checkstyle"
-    ignoreFailures = true
 }
+

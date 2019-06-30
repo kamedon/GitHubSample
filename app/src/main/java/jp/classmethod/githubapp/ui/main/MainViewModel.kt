@@ -29,5 +29,4 @@ class MainViewModel(private val useCase: IGitHubUseCase) : ViewModel() {
             loading.set(false)
         }
     }
-
 }
