@@ -1,7 +1,6 @@
-package jp.classmethod.githubapp.usecase
+package jp.classmethod.githubapp.ui.main
 
 import jp.classmethod.githubapp.repository.IGitHubRepository
-import jp.classmethod.githubapp.ui.main.UserPresentModel
 
 interface IGitHubUseCase {
     suspend fun user(name: String): UserPresentModel
