@@ -1,8 +1,7 @@
 package jp.classmethod.githubapp
 
 import android.app.Application
-import jp.classmethod.githubapp.di.ApiModule
-import jp.classmethod.githubapp.di.NetworkModule
+import jp.classmethod.githubapp.di.*
 import org.koin.core.context.startKoin
 
 class App : Application() {
@@ -13,7 +12,10 @@ class App : Application() {
             modules(
                 listOf(
                     NetworkModule.module(),
-                    ApiModule.module()
+                        ApiModule.module(),
+                        RepositoryModule.module(),
+                        ViewModelModule.module(),
+                        UseCaseModule.module()
                 )
             )
         }

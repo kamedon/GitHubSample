@@ -5,7 +5,6 @@ import retrofit2.http.Path
 
 interface IGitHubApi {
     @GET("users/{name}")
-    suspend fun user(@Path("name") name: String): User
+    suspend fun user(@Path("name") name: String): UserResponse?
 }
 
-data class User(val id: String, val hoge: String?)
